@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 
 public class PrintSubSequence {
-    static void print(int i,ArrayList<Integer>sub,int arr[],int n){
-        if(i==n){
+    static void print(int i,ArrayList<Integer>sub,int arr[]){
+        if(i==arr.length-1){
             System.out.println(sub);
         }
         sub.add(arr[i]);
-        print(i+1,sub,arr,n);
-        sub.remove(arr[i]);
-        print(i+1,sub,arr,n);
+        print(i+1,sub,arr);
+        sub.remove(sub.size()-1);
+        print(i+1,sub,arr);
 
     }
     public static void main(String[] args) {
      int arr[] = {3,1,2};
-     int n=2;
+     //int n=3;
      ArrayList<Integer> sub = new ArrayList<>();
-     print(0,sub ,arr,n);   
+     print(0,sub ,arr);   
     }
     
 }
