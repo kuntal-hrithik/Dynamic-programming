@@ -8,7 +8,7 @@ public class FrogJump {
         }
         if(dp[i]!=-1){
             return dp[i];
-        }
+        }  
         int left = jump(i-1,height,dp) + Math.abs(height[i] - height[i-1]);
         int right = Integer.MAX_VALUE;
         if(i>1){
